@@ -10,4 +10,6 @@ typedef ELEMENT *Lista;
 
 Lista init();
 
+void add_empty(Lista);
+
 #endif // LISTA_H
