@@ -1,16 +1,17 @@
 #ifndef LISTA_H
 #define LISTA_H
+#define MAX 35
 
 typedef struct element{
-    char* word_eng;
-    char* word_pol[3];
+    char word_eng[MAX];
+    char word_pol[3][MAX];
     struct element *next;
 }ELEMENT;
 typedef ELEMENT *Lista;
 
-Lista init();
+Lista last(Lista);
 
-void add(Lista, int);
+Lista prev(Lista, Lista);
 
 int liczba_elementow(Lista);
 

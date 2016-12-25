@@ -1,30 +1,39 @@
 #include <stdio.h>
+#include <string.h>
 #include "lista.h"
-#define MAX 35
 
+Lista last(Lista beg){
+    if(beg == NULL)
+        return NULL;
+    while(beg->next != NULL)
+        beg = beg->next;
+    return beg;
+}
 
-void add(Lista beg, int count){
-    int i = 0;
-    Lista nowy;
-    if(beg == NULL){
-        beg = (Lista)malloc(sizeof(ELEMENT));
-        beg->word_eng = (char*)malloc(sizeof(char)*MAX);
-        beg->word_pol[0] = (char*)malloc(sizeof(char)*MAX);
-        beg->word_pol[1] = (char*)malloc(sizeof(char)*MAX);
-        beg->word_pol[2] = (char*)malloc(sizeof(char)*MAX);
-        beg->next = NULL;
-        i++;
+Lista prev(Lista beg, Lista cur){
+    if(cur == NULL || beg == NULL || beg->next == NULL)
+        return NULL;
+    while(beg->next != NULL){
+        if(beg->next == cur)
+            return beg;
+        beg = beg->next;
     }
-    for(; i<count; i++){
-        nowy = (Lista)malloc(sizeof(ELEMENT));
-        beg->next = nowy;
-        nowy->word_eng = (char*)malloc(sizeof(char)*MAX);
-        nowy->word_pol[0] = (char*)malloc(sizeof(char)*MAX);
-        nowy->word_pol[1] = (char*)malloc(sizeof(char)*MAX);
-        nowy->word_pol[2] = (char*)malloc(sizeof(char)*MAX);
-        nowy->next = NULL;
-        beg = nowy;
+    return NULL;
+}
+
+Lista init_list(int count){
+    int i;
+    Lista beg = NULL, kon;
+    if(count <= 0)
+        return NULL;
+    beg = (Lista)malloc(sizeof(ELEMENT));
+    kon = beg;
+    for(i = 1; i<count;i++){
+        kon->next = (Lista)malloc(sizeof(ELEMENT));
+        kon = kon->next;
     }
+    kon->next = NULL;
+    return beg;
 }
 
 int liczba_elementow(Lista beg){
