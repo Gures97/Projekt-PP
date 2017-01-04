@@ -9,6 +9,8 @@ typedef struct element{
 }ELEMENT;
 typedef ELEMENT *Lista;
 
+Lista init_list(int);
+
 Lista last(Lista);
 
 Lista prev(Lista, Lista);
