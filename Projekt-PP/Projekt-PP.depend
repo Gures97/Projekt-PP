@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1483533517 source:e:\projekty\projekt_pp\projekt-pp\lista.c
+	<stdio.h>
+	<string.h>
+	"lista.h"
+
+1483534343 e:\projekty\projekt_pp\projekt-pp\lista.h
+
+1483648252 source:e:\projekty\projekt_pp\projekt-pp\ui.c
+	"ui.h"
+	<stdio.h>
+
+1483648252 e:\projekty\projekt_pp\projekt-pp\ui.h
+
+1483648095 source:e:\projekty\projekt_pp\projekt-pp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lista.h"
+	"ui.h"
+
