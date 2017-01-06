@@ -3,4 +3,6 @@
 
 void komunikat(char);
 
+void UIdodaj_slowo();
+
 #endif // UI_H

@@ -2,6 +2,20 @@
 #include <string.h>
 #include "lista.h"
 
+Lista dodaj_slowo(Lista beg, char ang[], char pol[][MAX]){
+    Lista ost = last(beg);
+    Lista nowy = (Lista)malloc(sizeof(ELEMENT));
+    int i, j = 0;
+    strcpy(nowy->word_eng, ang);
+    for(i = 0; i<3; i++){
+        if(strlen(pol[i]) > 0)
+            strcpy(nowy->word_pol[j], pol[i]);
+        j++;
+    }
+    ost->next = nowy;
+    return nowy;
+}
+
 Lista last(Lista beg){
     if(beg == NULL)
         return NULL;
@@ -21,21 +35,6 @@ Lista prev(Lista beg, Lista cur){
     return NULL;
 }
 
-Lista init_list(int count){
-    int i;
-    Lista beg = NULL, kon;
-    if(count <= 0)
-        return NULL;
-    beg = (Lista)malloc(sizeof(ELEMENT));
-    kon = beg;
-    for(i = 1; i<count;i++){
-        kon->next = (Lista)malloc(sizeof(ELEMENT));
-        kon = kon->next;
-    }
-    kon->next = NULL;
-    return beg;
-}
-
 int liczba_elementow(Lista beg){
     int count = 0;
     while(beg != NULL){
@@ -43,4 +42,14 @@ int liczba_elementow(Lista beg){
         beg = beg->next;
     }
     return count;
+}
+
+void wyswietl_slowo(Lista slowo){
+    int i;
+    printf("%s\n",slowo->word_eng);
+    for(i = 0;i<3;i++){
+        if(strlen(slowo[i])>0)
+            printf(" - %s\n", slowo->word_pol[i]);
+    }
+    printf("\n\n");
 }

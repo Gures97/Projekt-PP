@@ -9,12 +9,14 @@ typedef struct element{
 }ELEMENT;
 typedef ELEMENT *Lista;
 
-Lista init_list(int);
+Lista dodaj_slowo(Lista);
 
 Lista last(Lista);
 
 Lista prev(Lista, Lista);
 
 int liczba_elementow(Lista);
+
+void wyswietl_slowo(Lista);
 
 #endif // LISTA_H

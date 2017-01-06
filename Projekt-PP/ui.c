@@ -25,3 +25,17 @@ void komunikat(char wyb){
             printf("\n\nNie rozpoznano polecenia\n");
     }
 }
+
+void UIdodaj_slowo(){
+    char ang[MAX];
+    char pol[3][MAX];
+
+    system("cls");
+    printf("=====================\n");
+    printf("     DODAJ SLOWO\n");
+    printf("=====================\n\n\n");
+    printf("Podaj slowo angielskie: ");
+    gets(ang);
+    fflush(stdin);
+
+}
