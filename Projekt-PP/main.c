@@ -25,6 +25,24 @@ int main()
         printf("Wybieram opcje: ");
         fflush(stdin);
         scanf("%c",&q);
+        switch(q){
+            case'1':
+                break;
+            case'2':
+                UIdodaj_slowo(&slownik);
+                break;
+            case'3':
+                break;
+            case'4':
+                break;
+            case'q':
+                break;
+            case'\0':
+                break;
+            default:
+                ;
+        }
+
         if(q != 'q')
             system("cls");
     }

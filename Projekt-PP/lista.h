@@ -9,7 +9,7 @@ typedef struct element{
 }ELEMENT;
 typedef ELEMENT *Lista;
 
-Lista dodaj_slowo(Lista);
+void dodaj_slowo(Lista*, char ang[], char pol[][MAX]);
 
 Lista last(Lista);
 

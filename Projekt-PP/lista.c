@@ -2,8 +2,8 @@
 #include <string.h>
 #include "lista.h"
 
-Lista dodaj_slowo(Lista beg, char ang[], char pol[][MAX]){
-    Lista ost = last(beg);
+void dodaj_slowo(Lista *beg, char ang[], char pol[][MAX]){
+    Lista ost = last(*beg);
     Lista nowy = (Lista)malloc(sizeof(ELEMENT));
     int i, j = 0;
     strcpy(nowy->word_eng, ang);
@@ -12,8 +12,11 @@ Lista dodaj_slowo(Lista beg, char ang[], char pol[][MAX]){
             strcpy(nowy->word_pol[j], pol[i]);
         j++;
     }
-    ost->next = nowy;
-    return nowy;
+    nowy->next = NULL;
+    if(*beg == NULL)
+        *beg = nowy;
+    else
+        ost->next = nowy;
 }
 
 Lista last(Lista beg){
@@ -48,7 +51,7 @@ void wyswietl_slowo(Lista slowo){
     int i;
     printf("%s\n",slowo->word_eng);
     for(i = 0;i<3;i++){
-        if(strlen(slowo[i])>0)
+        if(strlen(slowo->word_pol[i])>0)
             printf(" - %s\n", slowo->word_pol[i]);
     }
     printf("\n\n");

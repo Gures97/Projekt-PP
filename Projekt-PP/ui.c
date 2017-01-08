@@ -26,16 +26,23 @@ void komunikat(char wyb){
     }
 }
 
-void UIdodaj_slowo(){
+void UIdodaj_slowo(Lista *slownik){
     char ang[MAX];
     char pol[3][MAX];
+    int i;
 
     system("cls");
     printf("=====================\n");
     printf("     DODAJ SLOWO\n");
     printf("=====================\n\n\n");
     printf("Podaj slowo angielskie: ");
+    fflush(stdin);
     gets(ang);
     fflush(stdin);
+    for(i = 0; i < 3; i++){
+        printf("Podaj %d polski odpowiednik (jesli wiecej nie ma - ENTER): ", i+1);
+        gets(pol[i]);
+    }
+    dodaj_slowo(slownik, ang, pol);
 
 }

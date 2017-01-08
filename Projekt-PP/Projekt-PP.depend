@@ -19,3 +19,24 @@
 	"lista.h"
 	"ui.h"
 
+1483909208 source:d:\projekt-pp\projekt-pp\projekt-pp\lista.c
+	<stdio.h>
+	<string.h>
+	"lista.h"
+
+1483909208 d:\projekt-pp\projekt-pp\projekt-pp\lista.h
+
+1483912697 source:d:\projekt-pp\projekt-pp\projekt-pp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lista.h"
+	"ui.h"
+
+1483912643 d:\projekt-pp\projekt-pp\projekt-pp\ui.h
+	"lista.h"
+
+1483912643 source:d:\projekt-pp\projekt-pp\projekt-pp\ui.c
+	"ui.h"
+	<stdio.h>
+
