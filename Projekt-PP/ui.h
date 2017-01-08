@@ -4,6 +4,8 @@
 
 void komunikat(char);
 
+void UIpokaz_slownik(Lista);
+
 void UIdodaj_slowo(Lista*);
 
 #endif // UI_H

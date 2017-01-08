@@ -27,6 +27,7 @@ int main()
         scanf("%c",&q);
         switch(q){
             case'1':
+                UIpokaz_slownik(slownik);
                 break;
             case'2':
                 UIdodaj_slowo(&slownik);

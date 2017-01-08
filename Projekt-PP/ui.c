@@ -4,10 +4,10 @@
 void komunikat(char wyb){
     switch(wyb){
         case'1':
-            printf("\n\nPokazalbym slownik.\n");
+            printf("\n\nPokazalem slownik.\n");
             break;
         case'2':
-            printf("\n\nDodalbym nowe slowo.\n");
+            printf("\n\nDodalem nowe slowo.\n");
             break;
         case'3':
             printf("\n\nZapislabym slownik do pliku.\n");
@@ -24,6 +24,22 @@ void komunikat(char wyb){
         default:
             printf("\n\nNie rozpoznano polecenia\n");
     }
+}
+
+void UIpokaz_slownik(Lista beg){
+    char c;
+    system("cls");
+    if(beg == NULL){
+        printf("Brak slow w slowniku\n");
+    }
+    while(beg != NULL){
+        wyswietl_slowo(beg);
+        beg = beg->next;
+    }
+    printf("ENTER aby wyjsc: ");
+    fflush(stdin);
+    getchar();
+    //scanf("%c", &c);
 }
 
 void UIdodaj_slowo(Lista *slownik){
