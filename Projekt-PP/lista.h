@@ -11,12 +11,22 @@ typedef ELEMENT *Lista;
 
 void dodaj_slowo(Lista*, char ang[], char pol[][MAX]);
 
+void usun_slowo_ang(Lista* beg, char word[]);
+
+Lista czy_jest_ang(Lista beg, char slowo[]);
+
+void usun_element(Lista*, Lista);
+
 Lista last(Lista);
 
 Lista prev(Lista, Lista);
 
+
+
 int liczba_elementow(Lista);
 
 void wyswietl_slowo(Lista);
+
+void destruktor(Lista);
 
 #endif // LISTA_H

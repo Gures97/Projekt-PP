@@ -16,8 +16,9 @@ int main()
 
         printf("1. Zobacz slownik.\n");
         printf("2. Dodaj nowe slowo.\n");
-        printf("3. Zapisz slownik do pliku.\n");
-        printf("4. Wczytaj slownik z pliku.\n");
+        printf("3. Usun slowo.\n");
+        printf("4. Zapisz slownik do pliku.\n");
+        printf("5. Wczytaj slownik z pliku.\n");
         printf("q. Wyjdz z programu.\n");
 
         komunikat(q);
@@ -27,12 +28,13 @@ int main()
         scanf("%c",&q);
         switch(q){
             case'1':
-                UIpokaz_slownik(slownik);
+                UIpokaz_slownik(slownik, 0);
                 break;
             case'2':
                 UIdodaj_slowo(&slownik);
                 break;
             case'3':
+                UIusun_slowo(&slownik);
                 break;
             case'4':
                 break;
@@ -47,5 +49,6 @@ int main()
         if(q != 'q')
             system("cls");
     }
+    destruktor(slownik);
     return 0;
 }

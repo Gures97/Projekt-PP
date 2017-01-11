@@ -5,18 +5,47 @@
 void dodaj_slowo(Lista *beg, char ang[], char pol[][MAX]){
     Lista ost = last(*beg);
     Lista nowy = (Lista)malloc(sizeof(ELEMENT));
-    int i, j = 0;
+    int i;
     strcpy(nowy->word_eng, ang);
-    for(i = 0; i<3; i++){
-        if(strlen(pol[i]) > 0)
-            strcpy(nowy->word_pol[j], pol[i]);
-        j++;
-    }
+    for(i = 0; i<3; i++)
+        strcpy(nowy->word_pol[i], pol[i]);
+
     nowy->next = NULL;
     if(*beg == NULL)
         *beg = nowy;
     else
         ost->next = nowy;
+}
+
+void usun_slowo_ang(Lista *beg, char word[]){
+    Lista slowko = czy_jest_ang(*beg, word);
+    if(slowko == NULL)
+        printf("Nie ma takiego slowa w slowniku.");
+    else{
+        usun_element(beg, slowko);
+        printf("Slowo zostalo usuniete.");
+    }
+}
+
+void usun_element(Lista *beg, Lista el){
+    if(*beg == el){
+        Lista newbg = (*beg)->next;
+        free(*beg);
+        *beg = newbg;
+        return;
+    }
+    Lista prv = prev(*beg, el), nxt = el->next;
+    free(el);
+    prv->next = nxt;
+}
+
+Lista czy_jest_ang(Lista beg, char slowo[]){
+    if(beg == NULL)
+        return NULL;
+    if(!strcmp(beg->word_eng, slowo))
+        return beg;
+    else
+        czy_jest_ang(beg->next, slowo);
 }
 
 Lista last(Lista beg){
@@ -55,4 +84,12 @@ void wyswietl_slowo(Lista slowo){
             printf(" - %s\n", slowo->word_pol[i]);
     }
     printf("\n\n");
+}
+
+void destruktor(Lista beg){
+    if(beg != NULL){
+        Lista nast = beg->next;
+        free(beg);
+        destruktor(nast);
+    }
 }
