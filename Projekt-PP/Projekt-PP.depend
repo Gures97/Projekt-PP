@@ -19,24 +19,24 @@
 	"lista.h"
 	"ui.h"
 
-1484171689 source:d:\projekt-pp\projekt-pp\projekt-pp\lista.c
+1484673817 source:d:\projekt-pp\projekt-pp\projekt-pp\lista.c
 	<stdio.h>
 	<string.h>
 	"lista.h"
 
-1484171689 d:\projekt-pp\projekt-pp\projekt-pp\lista.h
+1484680913 d:\projekt-pp\projekt-pp\projekt-pp\lista.h
 
-1484171689 source:d:\projekt-pp\projekt-pp\projekt-pp\main.c
+1484680955 source:d:\projekt-pp\projekt-pp\projekt-pp\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"lista.h"
 	"ui.h"
 
-1484171689 d:\projekt-pp\projekt-pp\projekt-pp\ui.h
+1484680930 d:\projekt-pp\projekt-pp\projekt-pp\ui.h
 	"lista.h"
 
-1484171689 source:d:\projekt-pp\projekt-pp\projekt-pp\ui.c
+1484680913 source:d:\projekt-pp\projekt-pp\projekt-pp\ui.c
 	"ui.h"
 	<stdio.h>
 
