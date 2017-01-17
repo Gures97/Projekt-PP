@@ -13,7 +13,13 @@ void dodaj_slowo(Lista*, char ang[], char pol[][MAX]);
 
 void usun_slowo_ang(Lista* beg, char word[]);
 
+void usun_slowo_pol(Lista* beg, char word[]);
+
 Lista czy_jest_ang(Lista beg, char slowo[]);
+
+Lista czy_jest_pol(Lista beg, char slowo[]);
+
+int ile_pol(Lista);
 
 void usun_element(Lista*, Lista);
 
